@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
 
         College::insert([
             "nazev" => "Nebelvír",
-            "cesta_obrazek" => "nebelvir.jpg",
+            "cesta_obrazek" => "nebelvir.png",
             "barva" => "red",
         ]);
     }
