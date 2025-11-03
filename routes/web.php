@@ -7,9 +7,20 @@ Route::get('/', function () {
 
     $koleje = College::all();
 
-    //dd($koleje);
+    $max = College::max('body');
 
-    return view('welcome', ['colleges' => $koleje]);
+    if(0 != $max) {
+        $pixelNaBod = 300 / $max;
+    } else {
+        $pixelNaBod = 0;
+    }    
+
+    return view('welcome', 
+        [
+            'colleges' => $koleje, 
+            'kouzelnaPro' => $pixelNaBod
+        ]
+    );
 });
 
 Route::view('/video-kamen-mudrcu', 'video')->name("videoHarryhoPottera");

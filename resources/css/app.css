@@ -7,12 +7,40 @@
 }
 
 body {
-    background-color: red;
+    background-color: blue;
+}
+
+.koleje-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
 .kolej {
     display: flex;
+    gap: 10px;
     flex-direction: column;
     max-width: 150px;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
+
+.kolej span {
+    font-weight: bold;
+}
+
+.bodovani_sede {
+    height: 300px; 
+    width: 60px;
+    background-color: gray;
+    position: relative;
+}
+
+.body {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+

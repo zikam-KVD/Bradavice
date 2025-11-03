@@ -25,10 +25,22 @@ class DatabaseSeeder extends Seeder
         ]);
         */
 
-        College::insert([
-            "nazev" => "Nebelvír",
-            "cesta_obrazek" => "nebelvir.png",
-            "barva" => "red",
-        ]);
+        $koleje = [
+            ["nazev" => "Nebelvír","cesta_obrazek" => "nebelvir.png","barva" => "red"], 
+            ["nazev" => "Zmijozel","cesta_obrazek" => "zmijozel.png","barva" => "green"], 
+            ["nazev" => "Havraspár","cesta_obrazek" => "havraspar.png","barva" => "blue"], 
+            ["nazev" => "Mrzimor","cesta_obrazek" => "mrzimor.png","barva" => "#daa520"], 
+        ];
+
+        foreach($koleje as $kolej)
+        {
+            //::insert vklada do db
+            //::create -> poue vytvari v PHP, pak nutno "vlozit" do db pomoci ->save()
+
+            $kolejVDatabazi = College::create($kolej); 
+            $kolejVDatabazi->body = rand(15, 200);  
+            $kolejVDatabazi->save();
+        }
+        
     }
 }

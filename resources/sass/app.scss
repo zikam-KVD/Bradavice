@@ -1,0 +1,28 @@
+$footerHeight: 150px; 
+ 
+ body > div {
+    min-height: calc(100vh - $footerHeight);
+ }
+
+footer {
+    width: 100%; 
+    height: $footerHeight;
+    background-color: #21242d;
+    color: white;
+
+    .footer--wrap {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            color: red;
+        }
+
+    }
+}
