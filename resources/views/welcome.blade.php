@@ -9,23 +9,23 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="koleje-wrapper bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-                @foreach($colleges as $college) 
+                @foreach($colleges as $college)
                     <div class="kolej">
                         <span style="color: {{ $college->barva }}">
                             {{ $college->nazev }}
                         </span>
                         <div class="bodovani_sede">
-                            <div 
-                            class="body" 
-                            style="background-color: {{ $college->barva }}; 
+                            <div
+                            class="body"
+                            style="background-color: {{ $college->barva }};
                             height: {{ $kouzelnaPro * $college->body }}px">
                         </div>
                         </div>
                         <span style="color: {{ $college->barva }}">
                             {{ $college->body }}
-                        </span>                        
+                        </span>
                         <img src="{{ asset('images/' . $college->cesta_obrazek) }}" alt="kolej X">
-                    </div>                    
+                    </div>
                 @endforeach
             </div>
         </div>

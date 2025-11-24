@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CollegeController;
 use App\Models\College;
 use Illuminate\Support\Facades\Route;
 
@@ -13,11 +14,11 @@ Route::get('/', function () {
         $pixelNaBod = 300 / $max;
     } else {
         $pixelNaBod = 0;
-    }    
+    }
 
-    return view('welcome', 
+    return view('welcome',
         [
-            'colleges' => $koleje, 
+            'colleges' => $koleje,
             'kouzelnaPro' => $pixelNaBod
         ]
     );
@@ -33,4 +34,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/koleje', [CollegeController::class, 'showColleges'])->name('admin.koleje');
+    Route::post(
+        '/kolej/uprav/{id}',
+        [CollegeController::class, 'upravKolej'])->name('admin.edit'
+    );
 });
