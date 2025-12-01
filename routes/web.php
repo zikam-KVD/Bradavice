@@ -40,4 +40,6 @@ Route::middleware([
         '/kolej/uprav/{id}',
         [CollegeController::class, 'upravKolej'])->name('admin.edit'
     );
+
+    Route::view('/colleges-livewire', 'colleges_livewire')->name('admin.kolej-livewire');
 });
